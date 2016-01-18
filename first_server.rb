@@ -8,7 +8,7 @@ loop do
            "Content-Type: text/plain\r\n" +
            "Connection: close\r\n\r\n"
     inputline = connection.gets  # Read from connection
-
+    puts inputline
     file = File.readlines( "index.html") 
     file.each do |line|
       connection.puts line
