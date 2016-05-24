@@ -5,9 +5,15 @@ loop do
     connection = server.accept   # Open connection
     inputline = connection.gets  # Read from connection
 
+    connection.print inputline   # prints get params
+
+    connection.print "HTTP/1.1 200 OK\r\n" +
+           "Content-Type: text/plain\r\n" +
+           "Connection: close\r\n\r\n"
+
     IO.foreach("helloer.html") do |line|
       connection.puts line
     end
-    
+
     connection.close             # Close connection
 end
