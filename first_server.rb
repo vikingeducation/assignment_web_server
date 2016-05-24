@@ -5,6 +5,9 @@ loop do
     connection = server.accept   # Open connection
     inputline = connection.gets  # Read from connection
 
-    connection.puts "Hello World"   # Write into connection
+    IO.foreach("helloer.html") do |line|
+      connection.puts line
+    end
+    
     connection.close             # Close connection
 end
