@@ -1,3 +1,5 @@
+Assignment completed by [Stephen Mayeux](http://stephenmayeux.com)
+
 # assignment_web_server
 Ready to serve, milord!
 
