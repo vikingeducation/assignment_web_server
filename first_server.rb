@@ -1,10 +1,10 @@
 require 'socket'
-
+# IP address is 0.0.0.0 and it's on port 8080:
 server = TCPServer.new("0.0.0.0", 8080)
 loop do
-  connection = server.accept
-  inputline = connection.gets
+    connection = server.accept   # Open connection
+    inputline = connection.gets  # Read from connection
 
-  connection puts "Hello World!"
-  connection.close
+    connection.puts "Hello World"   # Write into connection
+    connection.close             # Close connection
 end
