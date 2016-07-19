@@ -4,11 +4,11 @@ server = TCPServer.new("0.0.0.0", 8080)
 loop do
     connection = server.accept   # Open connection
     inputline = connection.gets  # Read from connection
-    until connection.gets == nil
-      connection.puts connection.gets
+    while line = connection.gets
+      connection.puts line
     end
     connection.print "HTTP/1.1 200 OK\r\n" +
-      "Content-Type: text/plain\r\n" +
+      "Content-Type: text/html\r\n" +
       "Connection: close\r\n\r\n"
 
     connection.puts File.open("page.html", "r").readlines
