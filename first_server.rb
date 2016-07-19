@@ -10,9 +10,8 @@ loop do
   connection.print "HTTP/1.1 200 OK\r\n" +
            "Content-Type: NOT TEXT/plain\r\n" +
            "Connection: close\r\n\r\n"
-  response = HTTParty.get('http://api.stackexchange.com/2.2/questions?site=stackoverflow')
 
-  connection.puts response.body
+  connection.puts "Did this work?" << inputline
   #html_string = File.readlines("hello-world.html")
   #html_string.each { |line| connection.puts line }
   connection.close             # Close connection

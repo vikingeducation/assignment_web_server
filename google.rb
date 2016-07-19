@@ -16,6 +16,17 @@ class Google
   end
 end
 
-google = Google.new("Viking Code School")
-puts google.questions
+#google = Google.new("Viking Code School")
+#puts google.questions
 
+
+
+class Local
+  include HTTParty
+
+  base_uri "http://localhost:8080"
+end
+
+append = {question: "Will this work?"}
+
+puts Local.post("/",append)
