@@ -3,7 +3,8 @@ require 'socket'
 server = TCPServer.new("0.0.0.0", 8080)
 loop do
     connection = server.accept   # Open connection
-    inputline = connection.gets  # Read from connection
+    inputline = connection.recvfrom(1024)
+    # inputline = connection.gets  # Read from connection
 
 
     connection.print "HTTP/1.1 200 OK\r\n" +
@@ -13,8 +14,6 @@ loop do
     File.readlines("index.html").each do |line|
       connection.puts line
     end
-
-
 
     connection.puts "We received a request that looked like #{ inputline }"
     connection.puts "Hello World"   # Write into connection
