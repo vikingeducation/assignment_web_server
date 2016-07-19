@@ -14,8 +14,11 @@ loop do
       connection.puts line
     end
 
+
+
     connection.puts "We received a request that looked like #{ inputline }"
     connection.puts "Hello World"   # Write into connection
     connection.puts "This is a test"
+    connection.puts "#{inputline.inspect}"
     connection.close             # Close connection
 end
