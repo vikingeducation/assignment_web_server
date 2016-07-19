@@ -6,8 +6,8 @@ loop do
     inputline = connection.gets  # Read from connection
     puts inputline
 
-    connection.print "HTTP/1.1 200 OK\r\n" +
-           "Content-Type: text/plain\r\n" +
+    connection.print "HTTP/1.1 200 Nice work, Jerk.\r\n" +
+           "Content-Type: text/html\r\n" +
            "Connection: close\r\n\r\n"
     File.open("h1.html").readlines.each do |line|
      connection.puts line
