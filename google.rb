@@ -27,6 +27,9 @@ class Local
   base_uri "http://localhost:8080"
 end
 
-append = {question: "Will this work?"}
+# append = {question: "Will this work?"}
 
-puts Local.post("/",append)
+HTTParty.post("http://rubygems.org/api/v1/gems/httparty/owners",
+              :query => { :email => "alan+thinkvitamin@carsonified.com" })
+# puts Local.post("/get_stuff", append)
+
