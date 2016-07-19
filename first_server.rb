@@ -4,13 +4,14 @@ require 'socket'
 server = TCPServer.new("0.0.0.0", 8080)
 loop do
     connection = server.accept   # Open connection
-    inputline = connection.gets #|| connection.post  # Read from connection
+    # inputline = connection.gets #|| connection.post  # Read from connection
+    input = connection.recvfrom(1024)
     # postline = connection.post
     connection.print "HTTP/1.1 200 OK\r\n" +
             "Content-Type: text/plain\r\n" +
             "Connection: close\r\n\r\n"
     # connection.print "We received a request that looked like #{ inputline } and contained the following data: #{inputline.body}"
-
+    puts input
     file = File.readlines("hello.html")
 
      file.each do |line|
