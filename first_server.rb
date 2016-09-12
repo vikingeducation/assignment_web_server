@@ -7,7 +7,10 @@ loop do
     connection = server.accept   # Open connection
     inputline = connection.gets  # Read from connection
 
-
+    connection.print "HTTP/1.1 200 OK\r\n" +
+           "Content-Type: text/plain\r\n" +
+           "Connection: close\r\n\r\n"
+           
     connection.puts output   # Write into connection
     connection.close             # Close connection
 end
