@@ -13,7 +13,5 @@ loop do
 
     connection.puts( File.read('web_page.html') )
 
-    connection.puts "We received a request that looks like #{connection.gets}"
-
     connection.close
 end
