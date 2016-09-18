@@ -11,7 +11,13 @@ loop do
            "Content-Type: text/plain\r\n" +
            "Connection: close\r\n\r\n"
 
-    connection.puts( File.read('web_page.html') )
+    File.open('web_page.html', "r").each do | l |
+
+    	connection.puts l
+
+    end
+
+    connection.puts inputline
 
     connection.close
 end
