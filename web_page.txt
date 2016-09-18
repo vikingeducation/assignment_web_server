@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html>
 	<title>My Test Page</title>
 <body>
