@@ -17,7 +17,9 @@ loop do
 
     end
 
-    connection.puts inputline
+
+    puts "We received gets #{inputline} at #{connection.gets}"
+
 
     connection.close
 end
