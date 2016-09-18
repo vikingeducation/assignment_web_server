@@ -1,7 +1,6 @@
 require 'socket'
 # IP address is 0.0.0.0 and it's on port 8080:
 server = TCPServer.new("0.0.0.0", 8080)
-file = File.open("/Users/JoeBernardi/VCS/Ruby/assignment_web_server/web_page.txt", 'r' )
 
 loop do
     connection = server.accept   # Open connection
@@ -9,12 +8,7 @@ loop do
 
     inputline = connection.gets  # Read from connection
 
-    file.readlines.each do | l |
-
-    	connection.puts l
-
-    end
-
+    connection.puts( File.read('web_page.html') )
 
     	# Write into connection
     connection.close             # Close connection
