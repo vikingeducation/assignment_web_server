@@ -1,5 +1,5 @@
 require 'socket'
-# IP address is 0.0.0.0 and it's on port 8080:
+
 server = TCPServer.new("0.0.0.0", 8080)
 text = "Hello There"
 
