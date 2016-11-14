@@ -11,6 +11,7 @@ loop do
     file = File.open("helloer_world.html", "r")
     text = file.read
     connection.puts text
+    connection.puts "We received a request that looked like #{ inputline } and contained the following data: #{inputline}"
 
     # connection.puts "Hello World"   # Write into connection
     connection.close
