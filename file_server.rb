@@ -12,7 +12,7 @@ loop do
            "Connection: close\r\n\r\n"
 
     File.readlines('test.html').each do |line|
-      connection.puts line
+      connection.puts line # response
     end
 
     puts "We received the following request that looked like #{inputline.split('?')}"
