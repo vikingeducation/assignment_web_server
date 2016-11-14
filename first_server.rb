@@ -5,6 +5,7 @@ loop do
   connection = server.accept   # Open connection
   inputline = connection.gets  # Read from connection
   puts inputline
+  p "We received a request that looked like #{inputline.strip} and contained the following data: #{inputline.strip}"
   connection.print "HTTP/1.1 200 OK\r\n" +
     "Content-Type: text/plain\r\n" +
     "Connection: close\r\n\r\n"
