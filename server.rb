@@ -9,9 +9,6 @@ loop do
            "Content-Type: text/plain\r\n" +
            "Connection: close\r\n\r\n"
 
-    p inputline
-    p connection
-
     connection.puts "We received a request that looked like #{ inputline } and contained the following data:"
 
     File.readlines('./test.html').each do |line|
