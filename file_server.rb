@@ -15,6 +15,7 @@ loop do
       connection.puts line
     end
 
-    connection.puts "Hello World"   # Write to connection
+    puts "We received the following request that looked like #{inputline.split('?')}"
+
     connection.close                # Close connection
 end
