@@ -1,6 +1,6 @@
-# Open URI is another Ruby standard library
-#   which only supports GET requests
 require 'open-uri'
-open('http://localhost:8080') do |f|
+
+open('http://localhost:8080/html_page?id=1&name=bob') do |f|
     f.each_line{ |line| puts line }
 end
+
