@@ -5,9 +5,10 @@ loop do
   connection = server.accept   # Open connection
   inputline = connection.gets  # Read from connection
   puts inputline
-  p "We received a request that looked like #{inputline.strip} and contained the following data: #{inputline.strip}"
+  data_array = inputline.split(' ')
+  p "We received a request that looked like #{inputline.strip} and contained the following data: #{data_array[1]}"
   connection.print "HTTP/1.1 200 OK\r\n" +
-    "Content-Type: text/plain\r\n" +
+    "Content-Type: text/html\r\n" +
     "Connection: close\r\n\r\n"
   page = File.readlines('index.html')
   connection.puts page   # Write into connection
