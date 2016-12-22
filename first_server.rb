@@ -11,6 +11,7 @@ loop do
            "Content-Type: text/html\r\n" +
            "Connection: close\r\n\r\n"
 
+    connection.puts inputline
     
 
     File.open("./hello.html").each_line do |line|
