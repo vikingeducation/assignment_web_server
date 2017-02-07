@@ -6,11 +6,14 @@ server = TCPServer.new("0.0.0.0", 8080)
 loop do
     connection = server.accept   # Open connection
     inputline = connection.gets  # Read from connection
+    puts inputline
 
-        connection.print "HTTP/1.1 200 OK\r\n" +
+       connection.print "HTTP/1.1 200 OK\r\n" +
            "Content-Type: text/plain\r\n" +
            "Connection: close\r\n\r\n"
 
+
+       connection.puts "We received a request that looked like #{inputline} and contained the following data: .... " 
 
 
     #HTTP Request
