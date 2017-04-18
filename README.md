@@ -21,7 +21,7 @@ Hello-er World-er
 
 # Building the client to act as a web browser
 
-Open an PRY or IRB window
+Open a PRY or IRB window
 
 ```
 # Open URI is another Ruby standard library
