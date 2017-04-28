@@ -10,9 +10,15 @@ loop do
   connection = server.accept  # open connection
   inputline = connection.gets # read from connection
 
-  puts inputline  # see what client sent in the connection
+  # see what client sent in the connection
+  puts "We received a request that looked like: #{inputline}"
 
-  # return contents of our file
+  # send HTTP 200 response header
+  connection.print "HTTP/1.1 200 OK\r\n" +
+                   "Content-Type: text/plain\r\n" +
+                   "Connection: close\r\n\r\n"
+
+  # send contents of our file
   lines.each { |line| connection.puts line }
 
   connection.close  # close connection
