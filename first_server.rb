@@ -1,6 +1,6 @@
 require 'socket'
 # IP address is 0.0.0.0 and it's on port 8080
-server = TCPServer.new("localhost", 8080)
+server = TCPServer.new("0.0.0.0", 8080)
 ABSPATH = File.expand_path(File.dirname(__FILE__))
 
 file = File.read("#{ABSPATH}/index.html")
@@ -22,7 +22,7 @@ begin
     end
 
     response = file
-    response_headers = ["HTTP/1.1 200 OK\r\n", "Content-Type: text/plain\r\n", "Connection :close\r\n\r\n"].join
+    response_headers = ["HTTP/1.1 200 OK\r\n", "Content-Type: text/html\r\n", "Connection :close\r\n\r\n"].join
     arr = "We received a request that looked like #{inputline} and contained the following data: #{} "
 
     connection.print(response_headers)
