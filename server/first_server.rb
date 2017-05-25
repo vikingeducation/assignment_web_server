@@ -10,6 +10,8 @@ loop do
   connection = server.accept
   inputline = connection.gets
 
+  connection.print "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nConnection: close\r\n\r\n"
+
   connection.puts inputline
   connection.puts 'Hello World'
 
@@ -17,6 +19,7 @@ loop do
   File.new(file_name).each_line do |line|
     connection.puts line
   end
+
   connection.close
 end
 
