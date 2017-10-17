@@ -17,14 +17,13 @@ loop do
 
     # Response header
     connection.print("HTTP/1.1 200 OK\r\n" +
-                     "Content-Type: text/plain\r\n" +
+                     "Content-Type: text/html\r\n" +
                      "Connection: close\r\n\r\n")
 
     # Open the file that will be rendered
     file = File.readlines("index.html")
 
     # Write into connection
-    # This will render raw html in the browser
     connection.puts file
 
     # Close connection
