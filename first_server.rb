@@ -28,7 +28,6 @@ loop do
     connection.puts file
 
     # Close connection
-    connection.puts 'Closing connection'
     connection.close
   end
 
