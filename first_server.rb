@@ -6,6 +6,8 @@ port = 8080
 server = TCPServer.new(host, port)
 puts "Listening at http://#{host}:#{port}","Ctrl+C to quit"
 
+# Open the file that will be rendered
+content = File.readlines("index.html")
 
 loop do
     # Open connection
@@ -20,11 +22,8 @@ loop do
                      "Content-Type: text/html\r\n" +
                      "Connection: close\r\n\r\n")
 
-    # Open the file that will be rendered
-    file = File.readlines("index.html")
-
     # Write into connection
-    connection.puts file
+    connection.puts(content)
 
     # Close connection
     connection.close
