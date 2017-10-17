@@ -17,6 +17,7 @@ loop do
     file = File.readlines("index.html")
 
     # Write into connection
+    # This will render raw html in the browser
     connection.puts file
 
     # Close connection
