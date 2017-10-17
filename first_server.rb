@@ -1,6 +1,11 @@
 require 'socket'
 # IP address is 0.0.0.0 and it's on port 8080:
-server = TCPServer.new("0.0.0.0", 8080)
+host = 'localhost'
+port = 8080
+
+server = TCPServer.new(host, port)
+puts "Listening at http://#{host}:#{port}","Ctrl+C to quit"
+
 loop do
     # Open connection
     connection = server.accept
